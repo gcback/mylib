@@ -1,8 +1,8 @@
 part of '../mylib.dart';
 
 extension DoubleExts on double {
-  get radians => this * (pi / 180.0);
-  get degrees => this * (180.0 / pi);
+  get radians => this * (3.1415926535897932 / 180.0);
+  get degrees => this * (180.0 / 3.1415926535897932);
   get fix => toStringAsFixed(2);
   get fix3 => toStringAsFixed(3);
   get vertInsets => EdgeInsets.symmetric(vertical: this);
