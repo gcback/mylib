@@ -1,8 +1,8 @@
 part of '../mylib.dart';
 
 extension DoubleExts on double {
-  get radians => this * (3.1415926535897932 / 180.0);
-  get degrees => this * (180.0 / 3.1415926535897932);
+  get radians => this * (pi / 180.0);
+  get degrees => this * (180.0 / pi);
   get fix => toStringAsFixed(2);
   get fix3 => toStringAsFixed(3);
   get vertInsets => EdgeInsets.symmetric(vertical: this);
@@ -21,4 +21,8 @@ extension IntExts on int {
 
   String image(String category) =>
       '$base$category/$category${(this + 1).toString().padLeft(2, '0')}.jpg';
+}
+
+extension DoubleRecordsExts on (double, double) {
+  get insets => EdgeInsets.symmetric(horizontal: this.$1, vertical: this.$2);
 }
