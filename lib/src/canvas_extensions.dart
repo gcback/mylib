@@ -1,4 +1,3 @@
-// part of mylib;
 part of '../mylib.dart';
 
 extension CanvasExts on Canvas {

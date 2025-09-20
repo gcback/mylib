@@ -8,7 +8,8 @@ extension DoubleExts on double {
   EdgeInsets get vertInsets => EdgeInsets.symmetric(vertical: this);
   EdgeInsets get horiInsets => EdgeInsets.symmetric(horizontal: this);
   EdgeInsets get allInsets => EdgeInsets.all(toDouble());
-  TextStyle get sizedBold => TextStyle(fontSize: this, fontWeight: FontWeight.bold);
+  TextStyle get sizedBold =>
+      TextStyle(fontSize: this, fontWeight: FontWeight.bold);
   TextStyle get sizedFont => TextStyle(fontSize: this);
 }
 
@@ -24,5 +25,6 @@ extension IntExts on int {
 }
 
 extension DoubleRecordsExts on (double, double) {
-  EdgeInsets get insets => EdgeInsets.symmetric(horizontal: this.$1, vertical: this.$2);
+  EdgeInsets get insets =>
+      EdgeInsets.symmetric(horizontal: this.$1, vertical: this.$2);
 }
