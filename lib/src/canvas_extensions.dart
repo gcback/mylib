@@ -2,7 +2,8 @@
 part of '../mylib.dart';
 
 extension CanvasExts on Canvas {
-  drawText(double centerX, double centerY, String text, [TextStyle? style]) {
+  void drawText(double centerX, double centerY, String text,
+      [TextStyle? style]) {
     final textSpan = TextSpan(
       text: text,
       style: style ?? const TextStyle(color: Colors.black87),

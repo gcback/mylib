@@ -3,11 +3,12 @@ part of '../mylib.dart';
 typedef SizeFontWeightOfTextStyle = ({double? sz, FontWeight? weight});
 
 extension TextStyleExts on SizeFontWeightOfTextStyle {
-  get style => TextStyle(fontSize: this.sz ?? 14.0, fontWeight: this.weight);
+  TextStyle get style =>
+      TextStyle(fontSize: this.sz ?? 14.0, fontWeight: this.weight);
 }
 
 extension FontWeightExts on FontWeight {
-  get style => TextStyle(fontWeight: this);
+  TextStyle get style => TextStyle(fontWeight: this);
 }
 
 // 기변적인 text 문자열을 담는 Text 위젯의 크기를 계산

@@ -1,22 +1,22 @@
 part of '../mylib.dart';
 
 extension DoubleExts on double {
-  get radians => this * (pi / 180.0);
-  get degrees => this * (180.0 / pi);
-  get fix => toStringAsFixed(2);
-  get fix3 => toStringAsFixed(3);
-  get vertInsets => EdgeInsets.symmetric(vertical: this);
-  get horiInsets => EdgeInsets.symmetric(horizontal: this);
-  get allInsets => EdgeInsets.all(toDouble());
-  get sizedBold => TextStyle(fontSize: this, fontWeight: FontWeight.bold);
-  get sizedFont => TextStyle(fontSize: this);
+  double get radians => this * (pi / 180.0);
+  double get degrees => this * (180.0 / pi);
+  String get fix => toStringAsFixed(2);
+  String get fix3 => toStringAsFixed(3);
+  EdgeInsets get vertInsets => EdgeInsets.symmetric(vertical: this);
+  EdgeInsets get horiInsets => EdgeInsets.symmetric(horizontal: this);
+  EdgeInsets get allInsets => EdgeInsets.all(toDouble());
+  TextStyle get sizedBold => TextStyle(fontSize: this, fontWeight: FontWeight.bold);
+  TextStyle get sizedFont => TextStyle(fontSize: this);
 }
 
 extension IntExts on int {
   static const String base = 'http://spsms.dyndns.org:3100/images/';
 
-  get secs => Duration(seconds: this);
-  get msecs => Duration(milliseconds: this);
+  Duration get secs => Duration(seconds: this);
+  Duration get msecs => Duration(milliseconds: this);
   Color get color => Colors.primaries[(this + 1) % Colors.primaries.length];
 
   String image(String category) =>
@@ -24,5 +24,5 @@ extension IntExts on int {
 }
 
 extension DoubleRecordsExts on (double, double) {
-  get insets => EdgeInsets.symmetric(horizontal: this.$1, vertical: this.$2);
+  EdgeInsets get insets => EdgeInsets.symmetric(horizontal: this.$1, vertical: this.$2);
 }
