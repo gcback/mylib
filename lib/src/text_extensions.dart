@@ -11,59 +11,63 @@ extension FontWeightExts on FontWeight {
   TextStyle get style => TextStyle(fontWeight: this);
 }
 
-// 기변적인 text 문자열을 담는 Text 위젯의 크기를 계산
-Size calcTextSize(String text, TextStyle? style,
-    [double textScaleFactor = 1.0]) {
-  final TextPainter textPainter = TextPainter(
-    text: TextSpan(
-        text: text,
-        style: style ?? const TextStyle(fontWeight: FontWeight.bold)),
-    textDirection: TextDirection.ltr,
-  )..layout();
-  return textPainter.size;
+extension StringExts on String {
+  Widget get widget => Text(this);
 }
 
-class StringUtils {
-  static String? _raw = '';
+// // 기변적인 text 문자열을 담는 Text 위젯의 크기를 계산
+// Size calcTextSize(String text, TextStyle? style,
+//     [double textScaleFactor = 1.0]) {
+//   final TextPainter textPainter = TextPainter(
+//     text: TextSpan(
+//         text: text,
+//         style: style ?? const TextStyle(fontWeight: FontWeight.bold)),
+//     textDirection: TextDirection.ltr,
+//   )..layout();
+//   return textPainter.size;
+// }
 
-  StringUtils._() {
-    final random = Random();
-    // String dim =
-    //     'ABCDEFGHIGKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIGKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIGKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIGKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    String dim =
-        '''ABCDEFGHIGKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
-    ABCDEFGHIGKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
-    ABCDEFGHIGKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
-    ABCDEFGHIGKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'''
-            .replaceAll(RegExp(r"\n|\s"), '');
+// class StringUtils {
+//   static String? _raw = '';
 
-    List<String> items = [];
+//   StringUtils._() {
+//     final random = Random();
+//     // String dim =
+//     //     'ABCDEFGHIGKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIGKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIGKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIGKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+//     String dim =
+//         '''ABCDEFGHIGKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
+//     ABCDEFGHIGKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
+//     ABCDEFGHIGKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
+//     ABCDEFGHIGKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'''
+//             .replaceAll(RegExp(r"\n|\s"), '');
 
-    // String to List of substring to modify
-    for (final sub in dim.codeUnits) {
-      items.add(String.fromCharCode(sub));
-    }
+//     List<String> items = [];
 
-    // shuffle it
-    for (int i = 0; i < items.length; i++) {
-      var n = random.nextInt(i + 1);
-      var temp = items[i];
-      items[i] = items[n];
-      items[n] = temp;
-    }
+//     // String to List of substring to modify
+//     for (final sub in dim.codeUnits) {
+//       items.add(String.fromCharCode(sub));
+//     }
 
-    _raw = items.join();
-  }
+//     // shuffle it
+//     for (int i = 0; i < items.length; i++) {
+//       var n = random.nextInt(i + 1);
+//       var temp = items[i];
+//       items[i] = items[n];
+//       items[n] = temp;
+//     }
 
-  static final StringUtils _instance = StringUtils._();
-  factory StringUtils() {
-    return _instance;
-  }
+//     _raw = items.join();
+//   }
 
-  String rand(int len) {
-    len = min(len, _raw!.length);
+//   static final StringUtils _instance = StringUtils._();
+//   factory StringUtils() {
+//     return _instance;
+//   }
 
-    final i = Random().nextInt(_raw!.length - len + 1);
-    return _raw!.substring(i, i + len);
-  }
-}
+//   String rand(int len) {
+//     len = min(len, _raw!.length);
+
+//     final i = Random().nextInt(_raw!.length - len + 1);
+//     return _raw!.substring(i, i + len);
+//   }
+// }
