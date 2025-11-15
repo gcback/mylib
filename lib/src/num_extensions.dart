@@ -14,14 +14,14 @@ extension DoubleExts on double {
 }
 
 extension IntExts on int {
-  static const String base = 'http://spsms.dyndns.org:3100/images/';
+  static const String _base = 'http://spsms.dyndns.org:3100/images/';
 
   Duration get secs => Duration(seconds: this);
   Duration get msecs => Duration(milliseconds: this);
   Color get color => Colors.primaries[(this + 1) % Colors.primaries.length];
 
   String image(String category) =>
-      '$base$category/$category${(this + 1).toString().padLeft(2, '0')}.jpg';
+      '$_base$category/$category${(this + 1).toString().padLeft(2, '0')}.jpg';
 }
 
 extension DoubleRecordsExts on (double, double) {

@@ -5,11 +5,10 @@ version: 0.0.1
 homepage:
 
 environment:
-  sdk: '>=3.0.5 <4.0.0'
-  flutter: '>=1.17.0'
+  sdk: "^3.10.0-290.4.beta"
 
 dependencies:
-  flex_color_scheme: ^8.3.0
+  flex_color_scheme: ^8.3.1
   flutter:
     sdk: flutter
   flutter_hooks: ^0.21.3+1
